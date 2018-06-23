@@ -87,7 +87,7 @@ Instantiating new process event and populate it with the parameter request.
 
 Start fail-safe operation.
 	Dispatching the process event over the stored event dispatcher with the computed process event name.
-	In case of failure, hydrate the process event with the resulting exception.
+	In case of failure, hydrate the process event with the resulting exception and log it.
 End fail-safe operation.
 
 Instantiating new response event, hydrated with the processing event response part. 
@@ -182,7 +182,7 @@ class Controller extends ApiController
 namespace My\Namespace;
 
 use KairosProject\ApiController\Controller\ApiControllerInterface;
-use KairosProject\ApiController\Trait\ExecutionTrait;
+use KairosProject\ApiController\Traits\ExecutionTrait;
 
 class Controller extends AnotherController implements ApiControllerInterface
 {
