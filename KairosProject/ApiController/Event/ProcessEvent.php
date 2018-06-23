@@ -8,8 +8,8 @@ declare(strict_types=1);
  *
  * PHP version 7.2
  *
- * @category Api controller event
- * @package  Kairos project
+ * @category Api_Controller_Event
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -24,8 +24,8 @@ use Psr\Http\Message\ServerRequestInterface;
  *
  * This API event is in cahrge of the shipping of the request between each process listeners.
  *
- * @category Api controller event
- * @package  Kairos project
+ * @category Api_Controller_Event
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -67,7 +67,9 @@ class ProcessEvent extends Event implements ProcessEventInterface
      *
      * In addition, a new ArrayObject instance will be stored as internal event storage.
      *
-     * @param ServerRequestInterface $request
+     * @param ServerRequestInterface $request The original request instance
+     *
+     * @return void
      */
     public function __construct(ServerRequestInterface $request)
     {
@@ -119,8 +121,8 @@ class ProcessEvent extends Event implements ProcessEventInterface
      *
      * Store a parameter value, later accessible by the given parameter key. The value is overwrited if already exist.
      *
-     * @param string  $parameterName  The parameter key to get back the value
-     * @param mixed   $parameterValue The parameter value to be stored
+     * @param string $parameterName  The parameter key to get back the value
+     * @param mixed  $parameterValue The parameter value to be stored
      *
      * @return $this
      */
@@ -195,4 +197,3 @@ class ProcessEvent extends Event implements ProcessEventInterface
         );
     }
 }
-

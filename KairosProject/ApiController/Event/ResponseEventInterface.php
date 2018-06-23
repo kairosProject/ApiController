@@ -8,8 +8,8 @@ declare(strict_types=1);
  *
  * PHP version 7.2
  *
- * @category Api controller event
- * @package  Kairos project
+ * @category Api_Controller_Event
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -22,8 +22,8 @@ namespace KairosProject\ApiController\Event;
  * This interface describe the API event in charge of the shipping of the process result during the response
  * formatting process.
  *
- * @category Api controller event
- * @package  Kairos project
+ * @category Api_Controller_Event
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -51,4 +51,3 @@ interface ResponseEventInterface
      */
     public function getResponse();
 }
-

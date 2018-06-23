@@ -8,8 +8,8 @@ declare(strict_types=1);
  *
  * PHP version 7.2
  *
- * @category Api controller trait
- * @package  Kairos project
+ * @category Api_Controller_Trait
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -28,8 +28,8 @@ use KairosProject\ApiController\Event\ResponseEvent;
  * This trait implements the logic of the ApiController. It allows the end users to reimplement the logic into their
  * own controller with the ability to extends a framework specific controller.
  *
- * @category Api controller trait
- * @package  Kairos project
+ * @category Api_Controller_Trait
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -88,10 +88,10 @@ trait ExecutionTrait
      * It will register the logger instance, the event dispatcher instance and the two optional suffix for the
      * implementation class.
      *
-     * @param LoggerInterface $logger                   The logger, to be stored
+     * @param LoggerInterface          $logger          The logger, to be stored
      * @param EventDispatcherInterface $eventDispatcher The event dispatcher, to be stored
-     * @param string $processSuffix                     The event process suffix, to be stored
-     * @param string $responseSuffix                    The event response suffix, to be stored
+     * @param string                   $processSuffix   The event process suffix, to be stored
+     * @param string                   $responseSuffix  The event response suffix, to be stored
      *
      * @return void
      */
@@ -175,4 +175,3 @@ trait ExecutionTrait
         return $responseEvent->getResponse();
     }
 }
-

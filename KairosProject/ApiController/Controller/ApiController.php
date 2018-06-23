@@ -8,8 +8,8 @@ declare(strict_types=1);
  *
  * PHP version 7.2
  *
- * @category Api controller trait
- * @package  Kairos project
+ * @category Api_Controller
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -23,8 +23,8 @@ use KairosProject\ApiController\Traits\ExecutionTrait;
  *
  * This class is the default implementation of the ApiController.
  *
- * @category Api controller
- * @package  Kairos project
+ * @category Api_Controller
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -33,4 +33,3 @@ class ApiController implements ApiControllerInterface
 {
     use ExecutionTrait;
 }
-

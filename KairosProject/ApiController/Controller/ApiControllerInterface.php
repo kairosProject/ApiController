@@ -8,8 +8,8 @@ declare(strict_types=1);
  *
  * PHP version 7.2
  *
- * @category Api controller
- * @package  Kairos project
+ * @category Api_Controller
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -23,8 +23,8 @@ use Psr\Http\Message\ServerRequestInterface;
  *
  * This interface describe the API default controller
  *
- * @category Api controller
- * @package  Kairos project
+ * @category Api_Controller
+ * @package  Kairos_Project
  * @author   matthieu vallance <matthieu.vallance@cscfa.fr>
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
@@ -54,4 +54,3 @@ interface ApiControllerInterface
      */
     public function execute(ServerRequestInterface $request, string $eventBaseName);
 }
-
