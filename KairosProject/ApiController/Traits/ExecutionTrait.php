@@ -145,7 +145,7 @@ trait ExecutionTrait
         $processEvent = new ProcessEvent($request);
 
         try {
-            $this->eventDispatcher->dispatch($processEventName, $processEvent);
+            $processEvent = $this->eventDispatcher->dispatch($processEventName, $processEvent);
         } catch (\Exception $processException) {
             $this->logger->error(
                 'Process error',
@@ -171,7 +171,7 @@ trait ExecutionTrait
             ]
         );
 
-        $this->eventDispatcher->dispatch($responseEventName, $responseEvent);
+        $responseEvent = $this->eventDispatcher->dispatch($responseEventName, $responseEvent);
         return $responseEvent->getResponse();
     }
 }

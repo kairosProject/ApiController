@@ -1,9 +1,10 @@
 {
     "source": {
         "directories": [
-            "KairosProject"
+            "KairosProject/ApiController"
         ],
         "excludes": [
+            "Tests"
         ]
     },
     "timeout": 10,
