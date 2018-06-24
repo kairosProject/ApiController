@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae68bf9dae6f625dd2f3af6f3d89e9ce",
+    "content-hash": "d16e94fcfec139874e62af2492ae130e",
     "packages": [
         {
             "name": "psr/http-message",
@@ -341,6 +341,47 @@
                 "unit testing"
             ],
             "time": "2018-05-01T19:46:52+00:00"
+        },
+        {
+            "name": "kairos-project/tests",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kairosProject/Tests.git",
+                "reference": "616fbec4b36ac195ea7cd17c3af82ee9a960875f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kairosProject/Tests/zipball/616fbec4b36ac195ea7cd17c3af82ee9a960875f",
+                "reference": "616fbec4b36ac195ea7cd17c3af82ee9a960875f",
+                "shasum": ""
+            },
+            "require": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KairosProject\\Tests\\": "KairosProject/Tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "matthieu88160",
+                    "email": "matthieu.vallance@cscfa.fr"
+                }
+            ],
+            "description": "A simple phpunit test helper",
+            "time": "2018-06-24T12:00:17+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2837,7 +2878,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "kairos-project/tests": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

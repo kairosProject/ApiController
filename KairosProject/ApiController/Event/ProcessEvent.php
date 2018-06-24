@@ -20,7 +20,7 @@ use Symfony\Component\EventDispatcher\Event;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * Process event interface
+ * Process event
  *
  * This API event is in cahrge of the shipping of the request between each process listeners.
  *
@@ -175,6 +175,7 @@ class ProcessEvent extends Event implements ProcessEventInterface
      */
     public function setParameters(array $parameters) : ProcessEventInterface
     {
+        $this->storage = new \ArrayObject();
         foreach ($parameters as $parameterName => $parameterValue) {
             $this->setParameter($parameterName, $parameterValue);
         }
