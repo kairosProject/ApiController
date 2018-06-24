@@ -62,7 +62,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
      *
      * @return $this
      */
-    public function setResponse($responseData)
+    public function setResponse($responseData) : ResponseEventInterface
     {
         $this->response = $responseData;
         return $this;
