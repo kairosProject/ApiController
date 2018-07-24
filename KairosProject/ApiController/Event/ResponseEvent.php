@@ -31,6 +31,8 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class ResponseEvent extends Event implements ResponseEventInterface
 {
+    use StorageTrait;
+
     /**
      * Response.
      *
@@ -39,6 +41,18 @@ class ResponseEvent extends Event implements ResponseEventInterface
      * @var mixed
      */
     private $response;
+
+    /**
+     * Response event constructor.
+     *
+     * This default ResponseEventConstructor initialize the ResponseEvent storage.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->storage = new \ArrayObject();
+    }
 
     /**
      * Get response

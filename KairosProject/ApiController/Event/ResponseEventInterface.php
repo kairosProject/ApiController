@@ -28,7 +28,7 @@ namespace KairosProject\ApiController\Event;
  * @license  MIT <https://opensource.org/licenses/MIT>
  * @link     http://cscfa.fr
  */
-interface ResponseEventInterface
+interface ResponseEventInterface extends ParameterStorageInterface
 {
     /**
      * Set response data.

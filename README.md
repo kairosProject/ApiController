@@ -115,6 +115,8 @@ In addition, the process event will have to offer the ability to store and retri
 
 The response event is in charge of the response transformation, to be compliant with a given format. It will implement a 'setResponse' and a 'getResponse' methods, that allow changing the original response element.
 
+As the process event, the response event will also offer a storage for parameters.
+
 ## 5) Usage
 
 #### 5.1) Basic usage
