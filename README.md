@@ -191,3 +191,28 @@ class Controller extends AnotherController implements ApiControllerInterface
     use ExecutionTrait;
 }
 ```
+
+#### 5.5) Assign the response at the end
+
+If no one listener assign the response by itself, to bridge the process logic and the response one, the ApiController module offer a ResponseHydratorListener to be plugged at the end of a process. This omponent accept a parameter name as argument, allowing to specify which event parameter will be used as response.
+
+```PHP
+use KairosProject\ApiController\Controller\ApiController;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use KairosProject\ApiController\Listener\ResponseHydratorListener;
+
+// Instanciating event dispatcher
+$eventDispatcher = new EventDispatcher();
+$eventDispatcher->addListener('process_gets', $listener);
+$eventDispatcher->addListener('process_gets', new ResponseHydratorListener('my_parameter'));
+
+$eventDispatcher->addListener('response_gets', $listener);
+
+$controller = new ApiController(
+	$eventDispatcher,
+	$logger
+);
+
+$response = $controller->execute($request, 'gets');
+```
+
