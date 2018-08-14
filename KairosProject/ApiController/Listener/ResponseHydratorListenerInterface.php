@@ -51,4 +51,3 @@ interface ResponseHydratorListenerInterface
         EventDispatcherInterface $dispatcher
     );
 }
-

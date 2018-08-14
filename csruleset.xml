@@ -25,7 +25,6 @@
 	
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 	<rule ref="Generic.Classes.DuplicateClassName"/>
-	<rule ref="Generic.CodeAnalysis"/>
 	<rule ref="Generic.Commenting"/>
 	<rule ref="Generic.ControlStructures"/>
 	<rule ref="Generic.Debug"/>

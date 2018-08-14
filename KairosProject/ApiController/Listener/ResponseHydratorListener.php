@@ -76,10 +76,9 @@ class ResponseHydratorListener implements ResponseHydratorListenerInterface
             return;
         }
 
-        $format = 'The specified parameter %s does not exist in the event parameter bag.';
+        $format = 'The specified parameter "%s" does not exist in the event parameter bag.';
         $format .= 'This can be due to an unplugged listener or even an miscatched exception.';
 
         throw new \LogicException(sprintf($format, $this->parameterName));
     }
 }
-
