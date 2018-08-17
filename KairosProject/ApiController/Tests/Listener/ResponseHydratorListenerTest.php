@@ -44,6 +44,7 @@ class ResponseHydratorListenerTest extends AbstractTestClass
     public function testConstruct()
     {
         $this->assertConstructor(['parameterName' => 'name']);
+        $this->assertConstructor([], ['parameterName' => ResponseHydratorListener::ORIGINAL_DATA_PARAMETER]);
     }
 
     /**

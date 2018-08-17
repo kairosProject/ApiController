@@ -34,13 +34,22 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class ResponseHydratorListener implements ResponseHydratorListenerInterface
 {
     /**
+     * Original data parameter
+     *
+     * This constant define the default original parameter where to find the response informations
+     *
+     * @var string
+     */
+    public const ORIGINAL_DATA_PARAMETER = 'data';
+
+    /**
      * Parameter name
      *
      * The parameter name, to be used as event parameter name, allowing to get the response content
      *
      * @var string
      */
-    private $parameterName;
+    private $parameterName = self::ORIGINAL_DATA_PARAMETER;
 
     /**
      * Construct
@@ -52,7 +61,7 @@ class ResponseHydratorListener implements ResponseHydratorListenerInterface
      *
      * @return void
      */
-    public function __construct(string $parameterName)
+    public function __construct(string $parameterName = self::ORIGINAL_DATA_PARAMETER)
     {
         $this->parameterName = $parameterName;
     }
