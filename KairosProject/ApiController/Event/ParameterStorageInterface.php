@@ -39,7 +39,7 @@ interface ParameterStorageInterface
      *
      * @return $this
      */
-    public function setParameter(string $parameterName, $parameterValue) : ProcessEventInterface;
+    public function setParameter(string $parameterName, $parameterValue);
 
     /**
      * Get a parameter.
@@ -72,7 +72,7 @@ interface ParameterStorageInterface
      *
      * @return $this
      */
-    public function setParameters(array $parameters) : ProcessEventInterface;
+    public function setParameters(array $parameters);
 
     /**
      * Get parameters.

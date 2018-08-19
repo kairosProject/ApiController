@@ -46,6 +46,68 @@ class ResponseEventTest extends AbstractTestClass
     }
 
     /**
+     * Test for setParameter.
+     *
+     * Validate the KairosProject\ApiController\Event\ResponseEvent::setParameter method
+     *
+     * @return void
+     */
+    public function testSetParameter() : void
+    {
+        $parameterName = 'name';
+        $parameterValue = $this->createMock(\stdClass::class);
+        $instance = $this->getInstance(['storage' => new \ArrayObject()]);
+
+        $this->assertSame(
+            $instance,
+            $instance->setParameter($parameterName, $parameterValue)
+        );
+
+        $storage = $this->getClassProperty('storage')->getValue($instance);
+
+        $this->assertTrue($storage->offsetExists($parameterName));
+        $this->assertSame($parameterValue, $storage->offsetGet($parameterName));
+    }
+
+    /**
+     * Test for setParameters.
+     *
+     * Validate the KairosProject\ApiController\Event\ResponseEvent::setParameters method
+     *
+     * @return void
+     */
+    public function testSetParameters()
+    {
+        $instance = $this->getInstance(['storage' => new \ArrayObject()]);
+
+        $initialParameters = [
+            'a' => new \stdClass(),
+            'b' => new \stdClass(),
+            'c' => new \stdClass()
+        ];
+        $this->assertSame($instance, $instance->setParameters($initialParameters));
+        $this->assertSame(
+            $initialParameters,
+            iterator_to_array(
+                $this->getClassProperty('storage')
+                    ->getValue($instance)
+                    ->getIterator(),
+                true
+            )
+        );
+
+        $this->assertSame($instance, $instance->setParameters([]));
+        $this->assertEmpty(
+            iterator_to_array(
+                $this->getClassProperty('storage')
+                    ->getValue($instance)
+                    ->getIterator(),
+                true
+            )
+        );
+    }
+
+    /**
      * Get tested class
      *
      * Return the tested class name

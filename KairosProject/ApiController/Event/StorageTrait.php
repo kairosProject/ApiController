@@ -48,7 +48,7 @@ trait StorageTrait
      *
      * @return $this
      */
-    public function setParameter(string $parameterName, $parameterValue) : ProcessEventInterface
+    public function setParameter(string $parameterName, $parameterValue)
     {
         $this->storage->offsetSet($parameterName, $parameterValue);
         return $this;
@@ -95,7 +95,7 @@ trait StorageTrait
      *
      * @return $this
      */
-    public function setParameters(array $parameters) : ProcessEventInterface
+    public function setParameters(array $parameters)
     {
         $this->storage = new \ArrayObject();
         foreach ($parameters as $parameterName => $parameterValue) {
